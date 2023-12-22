@@ -9,6 +9,13 @@ import {RestApplication} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
+import {AuthenticationComponent} from '@loopback/authentication';
+import {
+  JWTAuthenticationComponent,
+  SECURITY_SCHEME_SPEC,
+  UserServiceBindings,
+} from '@loopback/authentication-jwt';
+import {DbDataSourceDataSource} from './datasources';
 
 export {ApplicationConfig};
 
@@ -40,5 +47,11 @@ export class XenostackBackendApplication extends BootMixin(
         nested: true,
       },
     };
+    // Mount authentication system
+    this.component(AuthenticationComponent);
+    // Mount jwt component
+    this.component(JWTAuthenticationComponent);
+    // Bind datasource
+    this.dataSource(DbDataSourceDataSource, UserServiceBindings.DATASOURCE_NAME);
   }
 }
