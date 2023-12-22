@@ -4,7 +4,7 @@ import {juggler} from '@loopback/repository';
 const config = {
   name: 'DbDataSource',
   connector: 'mongodb',
-  url: 'mongodb+srv://admin:admin01@cluster0.mhizf.mongodb.net/?retryWrites=true&w=majority',
+  url: `${process.env.DBURL}`,
   host: '',
   port: 0,
   user: '',
@@ -27,6 +27,7 @@ export class DbDataSourceDataSource extends juggler.DataSource
     @inject('datasources.config.DbDataSource', {optional: true})
     dsConfig: object = config,
   ) {
-    super(dsConfig);
+    console.log(dsConfig);
+    super({...dsConfig, url: process.env.DBURL});
   }
 }
