@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+    <style>
+        body {
+            background-image: url('image/back image.jfif');
+            background-size: cover;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        form {
+            border: 3px solid #f1f1f1;
+        }
+        
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid rgba(16, 15, 15, 0.925);
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #4d74a1;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        .cancelbtn {
+            background-color: #989595;
+            width: 100%;
+            height: 200%;
+            border: none;
+            border-radius: 0%;
+            margin: 0px 0;
+        }
+        
+        .cancelbtn:hover {
+            background-color: rgb(240, 212, 212);
+        }
+        
+        .main {
+            align-items: center;
+            width: 500px;
+            height: auto;
+            margin-left: 500px;
+            margin-top: 180px;
+            border: none;
+            background-color: white;
+        }
+        
+        .imgcontainer {
+            text-align: center;
+            margin: 0px 0 0px 0;
+            border: none;
+            background-color: rgb(253, 226, 201);
+            padding: 2px 2px;
+        }
+        
+        .container {
+            padding: 10px;
+            text-align: center;
+        }
+        
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+        
+        .text {
+            border: none;
+            background-color: rgb(209, 203, 196);
+            margin: 0px 0 0px 0;
+            text-align: center;
+        }
+        
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="main">
+
+        <div class="imgcontainer">
+            <div class="head">
+                <p></p>
+                <h1><i>Software service  sign up</i></h1>
+                <p></p>
+            </div>
+
+
+        </div>
+
+        <div class="container">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+
+            <br> <b>Enter your username and password to verify and sign in</b>
+
+
+        </div>
+        <div class="text">
+            <p> <b><br> By signing up, you agree to our terms of service and<br> privacy policy</b></p>
+
+            <!-- <ul>
+                <li>
+                    <a href="home.html"></a>
+                </li>
+            </ul> -->
+
+            <!-- <button type="submit" class="cancelbtn">Submit</button></div> -->
+            <input type="button" class="cancelbtn" value="submit" onclick="redirectToNextPage()">
+            <script>
+                function redirectToNextPage() {
+                    window.location.href = "home.html";
+                }
+            </script>
+
+
+
+            <!-- </div> -->
+            </form>
+        </div>
+
+
+
+</body>
+
+</html>
